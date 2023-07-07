@@ -40,6 +40,7 @@ const mainController = {
       };
       // Inicializar Firebase
       firebase.initializeApp(firebaseConfig);
+      const admin = require('firebase-admin');
       // Crear un nuevo usuario
       const userProperties = {
         email: req.body.email,

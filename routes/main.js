@@ -5,7 +5,7 @@ const mainController = require('../controllers/mainController');
 
 // Rutas
 router.get('/', mainController.index);
-router.get('/register', mainController.register);
+router.get('/register', mainController.register,);
 router.post('/saveUser', mainController.saveUser);
 //router.post('/login', mainController.login);
 

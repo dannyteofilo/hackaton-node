@@ -29,7 +29,7 @@ admin.initializeApp({
 // Configuración y middleware
 app.use(express.json());
 // Aquí puedes agregar otros middlewares, configuraciones y dependencias según sea necesario
-
+app.use(cors({ origin: "*" }));
 // Inicio del servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
