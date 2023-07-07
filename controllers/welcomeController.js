@@ -37,7 +37,7 @@ const welcomeController = {
         //console.log('Respuesta de la API:', response.data.choices[0].message.content);
         const resp = response.data.choices[0].text;
         // send the response to the view
-        res.json(response.data.choices[0].message.content);
+        res.json({ text: response.data.choices[0].message.content});
       })
       .catch((error) => {
         console.error('Error en la petición:', error);
