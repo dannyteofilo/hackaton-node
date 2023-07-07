@@ -1,6 +1,9 @@
 {
   "name": "hackathon-node",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.14.2"
+  },
   "description": "hackathon-node",
   "main": "index.js",
   "scripts": {
