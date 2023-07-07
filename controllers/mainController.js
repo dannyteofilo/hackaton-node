@@ -29,6 +29,17 @@ const mainController = {
     },
 
     saveUser: function (req, res) {
+      const firebase = require('firebase/app');
+      const firebaseConfig = {
+        apiKey: "AIzaSyAfWESN4MlsP76en4HlR144xBvrq1p760o",
+        authDomain: "hackaton-julio-2023.firebaseapp.com",
+        projectId: "hackaton-julio-2023",
+        storageBucket: "hackaton-julio-2023.appspot.com",
+        messagingSenderId: "706333694030",
+        appId: "1:706333694030:web:40fc2d984a8653fc090b1f"
+      };
+      // Inicializar Firebase
+      firebase.initializeApp(firebaseConfig);
       // Crear un nuevo usuario
       const userProperties = {
         email: req.body.email,
@@ -39,13 +50,13 @@ const mainController = {
       admin.auth().createUser(userProperties)
         .then((userRecord) => {
           console.log('Usuario creado exitosamente:', userRecord.uid);
+          res.json(userRecord);
           // redirect to welcome page
           //res.redirect('/welcome');
         })
         .catch((error) => {
           console.error('Error al crear usuario:', error);
-          // refresh the page
-          res.redirect('/');
+          res.status(500).json({ error: 'Error al guardar el usuario' });
         });
     },
 
