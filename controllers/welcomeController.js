@@ -74,7 +74,7 @@ const welcomeController = {
         // Obtener la imagen generada
         console.log('Imagen generada:', response.data.data);
         //console.log('Imagen generada:', response.data.data);
-        res.send({ data: response.data.data[0]})
+        res.json({ data: response.data.data[0]})
       })
       .catch((error) => {
         console.log('Error al generar la imagen:', error)
