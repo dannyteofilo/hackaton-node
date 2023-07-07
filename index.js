@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const admin = require('firebase-admin');
 const firebase = require('firebase/app');
+const cors = require('cors');
 require('firebase/auth');
 
 // Configuración de Firebase
